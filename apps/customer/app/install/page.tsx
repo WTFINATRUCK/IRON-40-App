@@ -8,12 +8,12 @@ export default async function Install() {
   const ua = (await headers()).get("user-agent") ?? "";
   return (
     <div className="wrap page stack">
-      <h1>Put IRON 40 on your phone</h1>
+      <h1>Put wee-d-liver on your phone</h1>
       <p className="muted">
         No app store needed. It opens full-screen like any other app and keeps you signed in.
       </p>
       <section className="panel">
-        <InstallGuide appName="IRON 40" initialPlatform={detectPlatform(ua)} />
+        <InstallGuide appName="wee-d-liver" initialPlatform={detectPlatform(ua)} />
       </section>
     </div>
   );

@@ -1,4 +1,4 @@
-# IRON 40
+# wee-d-liver
 
 Cannabis delivery platform for licensed operators. Three separate apps share one locked-down database:
 

@@ -1,4 +1,4 @@
-# IRON 40 — Security audit
+# wee-d-liver — Security audit
 
 Date: 2026-11-17 · Scope: database (schema, RLS, functions, storage), the three Next.js apps, hosting config, dependencies, repo.
 

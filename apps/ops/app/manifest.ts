@@ -3,9 +3,9 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "IRON 40 Ops",
-    short_name: "40 Ops",
-    description: "Operator console for IRON 40.",
+    name: "wee-d-liver Ops",
+    short_name: "wee-d Ops",
+    description: "Operator console for wee-d-liver.",
     start_url: "/",
     scope: "/",
     display: "standalone",

@@ -10,7 +10,7 @@ export default async function Install() {
     <div className="stack">
       <h1>Install the driver app</h1>
       <p className="muted">Keep it open while you're online so location updates reach dispatch.</p>
-      <InstallGuide appName="IRON 40 Driver" initialPlatform={detectPlatform(ua)} />
+      <InstallGuide appName="wee-d-liver Driver" initialPlatform={detectPlatform(ua)} />
     </div>
   );
 }

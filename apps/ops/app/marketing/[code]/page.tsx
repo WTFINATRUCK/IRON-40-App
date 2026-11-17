@@ -23,7 +23,7 @@ export default async function Campaign({ params }: { params: Promise<{ code: str
       <div className="spread no-print">
         <h1 style={{ margin: 0 }}>{c.label}</h1>
         <div className="row">
-          <a className="btn" href={dataUrl} download={`iron40-${c.code}.svg`}>Download QR (SVG)</a>
+          <a className="btn" href={dataUrl} download={`wee-d-liver-${c.code}.svg`}>Download QR (SVG)</a>
           <PrintButton />
         </div>
       </div>
@@ -31,8 +31,9 @@ export default async function Campaign({ params }: { params: Promise<{ code: str
 
       <article className="flyer">
         <div className="flyer-head">
-          <span className="flyer-word">IRON</span>
-          <span className="flyer-plate">40</span>
+          <span className="flyer-word">wee</span>
+          <span className="flyer-plate">d</span>
+          <span className="flyer-word">liver</span>
         </div>
         <p className="flyer-line">Licensed cannabis delivery. Scan to put us on your home screen.</p>
         <div className="qr-card">

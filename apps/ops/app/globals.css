@@ -43,9 +43,9 @@ body { background: var(--plate); }
 
 /* printable flyer */
 .flyer { background: #fff; color: #23272b; border: 1px solid var(--line); border-radius: var(--radius-m); padding: 2rem; max-width: 720px; }
-.flyer-head { display: flex; align-items: center; gap: 0.6rem; }
+.flyer-head { display: flex; align-items: center; gap: 0.3rem; }
 .flyer-word { font-size: 4rem; font-weight: 900; font-stretch: 125%; line-height: 1; }
-.flyer-plate {
+.flyer-plate { font-size: 2.2rem !important; line-height: 1;
   display: grid; place-items: center; width: 4.4rem; height: 4.4rem; border-radius: 50%; background: var(--spark);
   font-weight: 900; font-size: 1.8rem; box-shadow: inset 0 0 0 3px #23272b, inset 0 0 0 6px var(--spark), inset 0 0 0 8px #23272b;
 }

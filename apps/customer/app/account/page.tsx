@@ -21,7 +21,7 @@ export default async function Account() {
     return (
       <div className="wrap page">
         <h1>Wrong app for this account</h1>
-        <p>This email is set up for a different IRON 40 app. Sign out and use a separate email to shop.</p>
+        <p>This email is set up for a different wee-d-liver app. Sign out and use a separate email to shop.</p>
         <form action={signOutAction}><button className="btn">Sign out</button></form>
       </div>
     );

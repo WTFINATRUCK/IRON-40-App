@@ -1,4 +1,4 @@
--- IRON 40 — API functions. Every mutation lives here and checks who is calling.
+-- wee-d-liver — API functions. Every mutation lives here and checks who is calling.
 -- Error messages are stable codes that the apps map to user-facing copy.
 
 -- ================= internal helpers =================

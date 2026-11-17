@@ -2,7 +2,7 @@
 -- Demo user accounts are NOT created here (no credentials in git). See docs/SETUP.md.
 
 insert into public.tenants (slug, name, license_number, license_state, timezone)
-values ('iron40', 'IRON 40', 'PENDING-LICENSE', 'NY', 'America/New_York')
+values ('iron40', 'wee-d-liver', 'PENDING-LICENSE', 'NY', 'America/New_York')
 on conflict (slug) do nothing;
 
 with t as (select id from public.tenants where slug = 'iron40')

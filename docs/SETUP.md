@@ -2,7 +2,11 @@
 
 ## Live projects
 - Database: Supabase project `iron-40` (us-east-2). Migrations in `supabase/migrations`, demo catalog in `supabase/seed.sql`.
-- Vercel projects (one per app, separate domains): `iron40-customer`, `iron40-driver`, `iron40-ops`.
+- Vercel projects (one per app, separate domains):
+  - `iron40-customer` → https://wee-d-liver.vercel.app
+  - `iron40-driver` → https://wee-d-liver-driver.vercel.app
+  - `iron40-ops` → https://wee-d-liver-ops.vercel.app
+- Internal names (repo, Vercel project names, `@iron40/*` packages, tenant slug `iron40`) are not shown to customers.
 
 ## Environment variables (per Vercel project)
 | Variable | customer | driver | ops |

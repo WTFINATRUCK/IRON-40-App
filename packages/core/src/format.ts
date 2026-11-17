@@ -22,7 +22,7 @@ export const statusLabel: Record<OrderStatus, string> = {
 
 export const ACTIVE: OrderStatus[] = ["queued", "assigned", "en_route", "arrived"];
 
-export const receiptNo = (n: number) => `I40-${String(n).padStart(6, "0")}`;
+export const receiptNo = (n: number) => `WDL-${String(n).padStart(6, "0")}`;
 
 export const grams = (g: number | null | undefined) => (g == null ? "" : `${Number(g)} g`);
 

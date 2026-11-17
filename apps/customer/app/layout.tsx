@@ -11,9 +11,9 @@ import { AgeGate } from "./age-gate";
 import { CartLink } from "./cart-link";
 
 export const metadata: Metadata = {
-  title: { default: "IRON 40 — cannabis delivery", template: "%s · IRON 40" },
+  title: { default: "wee-d-liver — cannabis delivery", template: "%s · wee-d-liver" },
   description: "Flower, concentrates and gear from a licensed shop, delivered. 21+ with valid ID.",
-  appleWebApp: { capable: true, title: "IRON 40", statusBarStyle: "default" },
+  appleWebApp: { capable: true, title: "wee-d-liver", statusBarStyle: "default" },
   icons: { icon: "/icons/icon-192.png", apple: "/icons/apple-touch-icon.png" },
 };
 

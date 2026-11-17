@@ -3,9 +3,9 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
-    name: "IRON 40 Driver",
-    short_name: "40 Driver",
-    description: "Driver app for IRON 40.",
+    name: "wee-d-liver Driver",
+    short_name: "wee-d Driver",
+    description: "Driver app for wee-d-liver.",
     start_url: "/",
     scope: "/",
     display: "standalone",

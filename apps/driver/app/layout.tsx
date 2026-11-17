@@ -8,9 +8,9 @@ import { Brand } from "@iron40/core/components/Brand";
 import { ServiceWorker } from "@iron40/core/components/ServiceWorker";
 
 export const metadata: Metadata = {
-  title: { default: "IRON 40 Driver", template: "%s · IRON 40 Driver" },
+  title: { default: "wee-d-liver Driver", template: "%s · wee-d-liver Driver" },
   robots: { index: false, follow: false },
-  appleWebApp: { capable: true, title: "40 Driver", statusBarStyle: "black-translucent" },
+  appleWebApp: { capable: true, title: "wee-d Driver", statusBarStyle: "black-translucent" },
   icons: { icon: "/icons/icon-192.png", apple: "/icons/apple-touch-icon.png" },
 };
 

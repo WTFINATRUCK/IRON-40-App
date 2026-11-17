@@ -10,7 +10,7 @@ import { whoami } from "@iron40/core/supabase/server";
 import { signOutAction } from "./actions";
 
 export const metadata: Metadata = {
-  title: { default: "IRON 40 Ops", template: "%s · IRON 40 Ops" },
+  title: { default: "wee-d-liver Ops", template: "%s · wee-d-liver Ops" },
   robots: { index: false, follow: false },
   icons: { icon: "/icons/icon-192.png", apple: "/icons/apple-touch-icon.png" },
 };

@@ -1,4 +1,4 @@
--- IRON 40 — core schema, row level security and grants.
+-- wee-d-liver — core schema, row level security and grants.
 -- Model: every write goes through a SECURITY DEFINER RPC that checks the caller.
 -- Tables are read-only to API roles, and only through RLS.
 
