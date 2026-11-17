@@ -11,5 +11,4 @@ Cannabis delivery platform for licensed operators. Three separate apps share one
 Each app is its own Vercel project on its own domain, with its own session cookie. A customer login can't open the
 driver or ops app, and the database rejects any call that doesn't match the caller's role.
 
-See `docs/SETUP.md` to run it, `docs/SECURITY_AUDIT.md` for the audit, and `docs/BRAND_AND_MARKETING.md` for the
-go-to-market plan.
+See `docs/SETUP.md` to run it and `docs/SECURITY_AUDIT.md` for the security audit.

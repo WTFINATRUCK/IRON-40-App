@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { startTransition, useActionState, useState, useTransition } from "react";
 import { addAddress, saveProfile, submitId } from "./actions";
 
 type State = { error?: string; ok?: string } | undefined;
@@ -42,27 +42,67 @@ export function ProfileForm({
   );
 }
 
+// Phone photos are often 3–8 MB; hosting caps a request at 4.5 MB. Shrink to ≤1600 px JPEG in the browser
+// first (this also drops EXIF/GPS). The server still verifies and re-encodes whatever arrives.
+async function shrink(file: File): Promise<File> {
+  const bitmap = await createImageBitmap(file);
+  const scale = Math.min(1, 1600 / Math.max(bitmap.width, bitmap.height));
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.round(bitmap.width * scale);
+  canvas.height = Math.round(bitmap.height * scale);
+  canvas.getContext("2d")!.drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  bitmap.close();
+  const blob = await new Promise<Blob | null>((r) => canvas.toBlob(r, "image/jpeg", 0.85));
+  if (!blob) throw new Error("encode");
+  return new File([blob], "photo.jpg", { type: "image/jpeg" });
+}
+
 export function IdForm() {
   const [state, action, pending] = useActionState(submitId, undefined);
+  const [prepError, setPrepError] = useState<string | null>(null);
+  const [preparing, startPrep] = useTransition();
   return (
-    <form action={action} className="form">
+    <form
+      className="form"
+      onSubmit={(e) => {
+        e.preventDefault();
+        const form = new FormData(e.currentTarget);
+        setPrepError(null);
+        startPrep(async () => {
+          try {
+            const out = new FormData();
+            for (const key of ["id_front", "selfie"]) {
+              const f = form.get(key);
+              if (!(f instanceof File) || f.size === 0) throw new Error("missing");
+              out.set(key, await shrink(f));
+            }
+            startTransition(() => action(out));
+          } catch {
+            setPrepError("Couldn't read one of the photos. Retake it as a regular photo and try again.");
+          }
+        });
+      }}
+    >
       <div className="id-photos">
         <label>
           Front of your ID
           <span className="hint"> driver's license, state ID or passport</span>
-          <input name="id_front" type="file" accept="image/jpeg,image/png,image/webp" capture="environment" required />
+          <input name="id_front" type="file" accept="image/*" capture="environment" required />
         </label>
         <label>
           A selfie
           <span className="hint"> face clearly visible, good light</span>
-          <input name="selfie" type="file" accept="image/jpeg,image/png,image/webp" capture="user" required />
+          <input name="selfie" type="file" accept="image/*" capture="user" required />
         </label>
       </div>
       <p className="hint">
         Photos are stored privately, seen only by our ID reviewers, and stripped of location data before storage.
       </p>
+      {prepError && <p className="notice notice-error" role="alert">{prepError}</p>}
       <Status state={state} />
-      <button className="btn btn-primary" disabled={pending}>{pending ? "Uploading…" : "Submit ID for review"}</button>
+      <button className="btn btn-primary" disabled={pending || preparing}>
+        {pending || preparing ? "Uploading…" : "Submit ID for review"}
+      </button>
     </form>
   );
 }

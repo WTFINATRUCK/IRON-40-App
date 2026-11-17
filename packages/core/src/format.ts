@@ -41,7 +41,7 @@ const messages: Record<string, string> = {
   locked_after_submission: "Your name and date of birth are locked once your ID is submitted. Contact support to change them.",
   profile_required: "Finish your profile first.",
   already_submitted: "Your ID is already submitted.",
-  invalid_upload: "Upload a clear photo of your ID and a selfie (JPG, PNG or WebP, up to 8 MB each).",
+  invalid_upload: "Upload a clear photo of your ID and a selfie (regular photos, not screenshots of documents).",
   too_many_addresses: "You can save up to 5 addresses. Delete one first.",
   id_not_verified: "Your ID needs to be approved before you can order.",
   order_in_progress: "You already have an order on the way.",

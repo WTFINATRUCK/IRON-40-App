@@ -31,7 +31,7 @@ export async function saveProfile(_: FormState, form: FormData): Promise<FormSta
   return { ok: "Saved." };
 }
 
-const MAX_BYTES = 8 * 1024 * 1024;
+const MAX_BYTES = 4 * 1024 * 1024;
 
 // Checks the real file signature (not the browser-supplied type), then re-encodes to a clean JPEG.
 // Re-encoding strips EXIF (including GPS location) and anything hidden in the original file.

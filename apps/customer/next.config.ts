@@ -22,7 +22,7 @@ const config: NextConfig = {
   productionBrowserSourceMaps: false,
   outputFileTracingRoot: path.join(__dirname, "../.."),
   turbopack: { root: path.join(__dirname, "../..") },
-  experimental: { serverActions: { bodySizeLimit: "18mb" } },
+  experimental: { serverActions: { bodySizeLimit: "4mb" } },
   async headers() {
     return [
       { source: "/:path*", headers: security },
