@@ -1,0 +1,21 @@
+{
+  "name": "@iron40/core",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./styles.css": "./src/styles.css",
+    "./components/*": "./src/components/*.tsx",
+    "./supabase/*": "./src/supabase/*.ts",
+    "./*": "./src/*.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@supabase/ssr": "*",
+    "@supabase/supabase-js": "*",
+    "next": "*",
+    "react": "*"
+  }
+}

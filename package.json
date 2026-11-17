@@ -1,0 +1,13 @@
+{
+  "name": "iron-40",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev:customer": "npm run dev -w @iron40/customer",
+    "dev:driver": "npm run dev -w @iron40/driver",
+    "dev:ops": "npm run dev -w @iron40/ops",
+    "build": "npm run build -w @iron40/customer && npm run build -w @iron40/driver && npm run build -w @iron40/ops",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "engines": { "node": ">=20.9" }
+}

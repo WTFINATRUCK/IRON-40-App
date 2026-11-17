@@ -1,0 +1,28 @@
+/* Driver app: built for one hand, at night, in a car. Big targets, high contrast, amber for anything urgent. */
+body { padding-bottom: env(safe-area-inset-bottom); }
+.dtop { padding: calc(0.8rem + env(safe-area-inset-top)) 1rem 0.8rem; border-bottom: 1px solid var(--line); }
+.brand-link { text-decoration: none; }
+.dmain { padding: 1rem; max-width: 640px; margin: 0 auto; }
+.dmain .btn { min-height: 52px; font-size: 1.05rem; }
+
+.shift { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1rem; border-radius: var(--radius-m); background: var(--plate); border: 1px solid var(--line); }
+.shift-state { font-size: 1.4rem; font-weight: 850; font-stretch: 125%; }
+.shift.is-online { border-color: var(--patina); box-shadow: inset 4px 0 0 var(--patina); }
+.switch { min-width: 9rem; }
+
+.job { display: block; text-decoration: none; padding: 1rem; border-radius: var(--radius-m); background: var(--plate); border: 1px solid var(--line); }
+.job + .job { margin-top: 0.75rem; }
+.job-top { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
+.job-addr { font-size: 1.15rem; font-weight: 750; margin: 0.3rem 0; }
+
+.load { list-style: none; padding: 0; margin: 0; }
+.load li { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid var(--line); }
+.load .qty { font-weight: 850; color: var(--spark); }
+.load .zero { color: var(--ink-2); }
+
+.door { border: 2px solid var(--spark); border-radius: var(--radius-m); padding: 1rem; }
+.door h2 { color: var(--spark); }
+.big-num { font-size: 1.6rem !important; text-align: center; letter-spacing: 0.2em; font-weight: 800; }
+.action-bar { display: grid; gap: 0.6rem; }
+.map-links { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; }
+.map-links .btn { min-height: 44px; font-size: 0.95rem; }
