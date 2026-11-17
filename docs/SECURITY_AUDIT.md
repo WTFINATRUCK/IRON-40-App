@@ -2,7 +2,7 @@
 
 Date: 2026-11-17 · Scope: database (schema, RLS, functions, storage), the three Next.js apps, hosting config, dependencies, repo.
 
-**Result:** no critical issues open in the code. Five fixes were made during the audit. Four platform settings
+**Result:** no critical issues open in the code. Five fixes were made and verified during the audit. Four platform settings
 need the owner to change them in dashboards before real customers are onboarded (marked **Owner action**).
 
 ## How it was tested
@@ -62,14 +62,13 @@ need the owner to change them in dashboards before real customers are onboarded 
 | F-15 | Info | ID photos are kept indefinitely | Set a retention period that matches your state's record-keeping rule; staff deletion is already permitted by policy |
 | F-16 | Info | The door check matches the birth year typed by the driver: a compliance aid, not a strong control | Upgrade path: scan the ID's PDF417 barcode in the driver app |
 
-**Migration 004 (`supabase/migrations/20261117000004_hardening.sql`) is written and committed. Supabase asked for
-approval to apply it and the prompt timed out; it is applied once you approve it.**
+Migration 004 (`supabase/migrations/20261117000004_hardening.sql`) is applied and re-tested: anonymous menu reads
+work, a driver sees 0 orders closed more than 12 hours ago, and the per-customer order lock trigger is in place.
 
 ## Before taking real orders
-1. Approve migration 004 (F-04, F-08, F-09, F-10).
-2. Make the repo private (F-02).
-3. Supabase Auth: custom SMTP, redirect URLs, leaked-password protection, CAPTCHA, MFA (F-03, F-05, F-07, F-11).
-4. Delete demo accounts; create the real owner (see `SETUP.md`).
-5. Enter the real license number, state, tax rates, hours and limits in Ops → Settings, and the real hub in Ops → Hubs.
-6. Have a cannabis attorney confirm state rules on delivery hours, per-order limits, track-and-trace reporting
+1. Make the repo private (F-02).
+2. Supabase Auth: custom SMTP, redirect URLs, leaked-password protection, CAPTCHA, MFA (F-03, F-05, F-07, F-11).
+3. Delete demo accounts; create the real owner (see `SETUP.md`).
+4. Enter the real license number, state, tax rates, hours and limits in Ops → Settings, and the real hub in Ops → Hubs.
+5. Have a cannabis attorney confirm state rules on delivery hours, per-order limits, track-and-trace reporting
    (e.g. Metrc), and record retention. Track-and-trace integration is not built yet.
